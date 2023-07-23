@@ -281,14 +281,40 @@
     margin-right: 1em;
   }
   
-  .projects__grid {
+  /* qualifications */
+  .qualifications__grid {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
     grid-gap: 2em;
   }
+
+  .qualifications {
+    padding: 2em;
+    margin: 30 auto;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s linear;
+  }
   
+  .qualifications:hover {
+    transform: translateY(-7px);
+  }
+  
+  .qualifications__description {
+    margin-top: 1em;
+  }
+
+  /* project */
+  .project__grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+    grid-gap: 2em;
+  }
+
   .project {
     padding: 2em;
     margin: 0 auto;
@@ -322,6 +348,31 @@
   .project .link--icon {
     margin-left: 0.5em;
   }
+
+ /* certificates */
+  .certificates__grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+    grid-gap: 2em;
+ }
+
+ .certificates {
+   padding: 2em;
+   margin: 30 auto;
+   text-align: center;
+   box-shadow: var(--shadow);
+   transition: transform 0.2s linear;
+ }
+
+ .certificates:hover {
+    transform: translateY(-7px);
+ }
+    
+ .certificates__description {
+   margin-top: 1em;
+ }
   
   .skills__list {
     max-width: 450px;
