@@ -266,6 +266,7 @@
   .about__desc {
     font-size: 1rem;
     max-width: 600px;
+    text-align: center;
   }
   
   .about__desc,
@@ -347,6 +348,7 @@
   
   .project .link--icon {
     margin-left: 0.5em;
+    color:#2978b5
   }
 
  /* certificates */
