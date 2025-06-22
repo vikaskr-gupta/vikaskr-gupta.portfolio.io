@@ -1,11 +1,14 @@
+import {projectsData, skills} from './data.js';
+
+
 const body = document.body
 
 const btnTheme = document.querySelector('.fa-moon')
 const btnHamburger = document.querySelector('.fa-bars')
 
 const addThemeClass = (bodyClass, btnClass) => {
-  body.classList.add(bodyClass)
-  btnTheme.classList.add(btnClass)
+	body.classList.add(bodyClass)
+	btnTheme.classList.add(btnClass)
 }
 
 const getBodyTheme = localStorage.getItem('portfolio-theme')
@@ -20,7 +23,7 @@ const setTheme = (bodyClass, btnClass) => {
 	body.classList.remove(localStorage.getItem('portfolio-theme'))
 	btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme'))
 
-  addThemeClass(bodyClass, btnClass)
+	addThemeClass(bodyClass, btnClass)
 
 	localStorage.setItem('portfolio-theme', bodyClass)
 	localStorage.setItem('portfolio-btn-theme', btnClass)
@@ -61,3 +64,88 @@ const scrollUp = () => {
 }
 
 document.addEventListener('scroll', scrollUp)
+
+
+// Skills =========================================================================================
+const skillsList = document.getElementById("skillsList");
+
+skills.forEach(skill => {
+  const li = document.createElement("li");
+  li.className = "skills__list-item";
+  li.innerHTML = `<i class="${skill.icon}"></i> ${skill.name}`;
+  skillsList.appendChild(li);
+});
+
+
+// Skills =========================================================================================
+
+
+// Project ==============================================================================================
+const container = document.getElementById("projectsContainer");
+const viewMoreBtn = document.getElementById("viewMoreBtn");
+
+let currentIndex = 0;
+const batchSize = 6;
+
+// Create cards in batches
+function showProjects(batch) {
+	const slice = projectsData.slice(currentIndex, currentIndex + batch);
+	slice.forEach((project) => {
+		const card = document.createElement("div");
+		card.classList.add("project-card");
+		card.innerHTML = `
+      <img src="${project.image}" alt="${project.title} Screenshot" class="project-image" />
+      <div class="project-content">
+        <h3 class="project-title">${project.title}</h3>
+        <p class="project-description">${project.description}</p>
+        <div class="project_show">
+          <button class=" link view-btn" data-title="${project.title}" data-description="${project.description}" data-image="${project.image}">View</button>
+          <a href="${project.link}" target="_blank" class=" link">Visit Site</a>
+        </div>
+      </div>
+    `;
+		container.appendChild(card);
+	});
+	currentIndex += batch;
+	if (currentIndex >= projectsData.length) {
+		viewMoreBtn.style.display = "none"; // Hide button when done
+	}
+}
+
+// Initial load
+showProjects(batchSize);
+
+// Load more on button click
+viewMoreBtn.addEventListener("click", () => {
+	showProjects(6); // load 6 more
+});
+
+
+
+// Modal Logic
+const modal = document.getElementById("projectModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const closeModal = document.querySelector(".modal .close");
+
+// Event delegation
+container.addEventListener("click", function (e) {
+	if (e.target.classList.contains("view-btn")) {
+		const title = e.target.dataset.title;
+		const description = e.target.dataset.description;
+		const image = e.target.dataset.image;
+
+		modalTitle.textContent = title;
+		modalDescription.textContent = description;
+		modalImage.src = image;
+		modal.style.display = "block";
+	}
+});
+
+closeModal.onclick = () => (modal.style.display = "none");
+window.onclick = (e) => {
+	if (e.target === modal) modal.style.display = "none";
+};
+
+// Project - End ==========================================================================================
