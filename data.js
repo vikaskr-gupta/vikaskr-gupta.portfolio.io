@@ -12,7 +12,7 @@ export const projectsData = [
         title: "Hired 60",
         description: "Hired60 is a job search platform designed to connect candidates with recruiters efficiently within 60 days. It features job listings, user authentication, resume uploads, and admin job management tools for streamlined hiring.",
         image: "projects/hired60.png",
-        link: "Hired60.com",
+        link: "https://hired60.com",
         skills: [
             "ReactJS", "TailwindCSS", "ReduxToolKit", "JavaScript", "NodeJS", "ExpressJS", "MongoDB"
         ]
@@ -48,7 +48,7 @@ export const projectsData = [
         title: "Pantry2Plate",
         description: "A smart recipe search engine that suggests dishes based on the ingredients you have. Simply enter available ingredients, and it returns matching recipes with cooking instructions.",
         image: "projects/pantry2plate.png",
-        link: "#",
+        link: "/#0",
         skills: [
             "ReactJS", "CSS3", "JavaScript", "ExpressJS", "MongoDB", "EJS", "NodeJS"
         ]
@@ -102,7 +102,7 @@ export const projectsData = [
         title: "Ignitepad",
         description: "Ignitepad.com is an Education Technology Platform that is based on innovative and interactive learning driven by our experienced and skilled educators. We provide live online classes for Academics , Professional Courses,  Languages , Coding ,Skill enhancement, Fitness & Hobby Classes etc., with many benefits. Participate in our online classes from the comfort and secured environment of your home without having to go through the hassles of commuting and compromising with the security, especially in the case of kids.",
         image: "projects/ignitepad.png",
-        link: "ignitepad.com",
+        link: "https://ignitepad.com",
         skills: [
             "HTML5", "CSS3", "JavaScript", "MySQL", "PHP"
         ]
