@@ -593,7 +593,19 @@ main {
 
 .myprojects .project_show {
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.myprojects .project_show{
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+}
+
+.myprojects .project_show .link{
+  font-size: 14px;
 }
 
 .myprojects .project-link {
@@ -605,6 +617,17 @@ main {
 .myprojects .project-link:hover {
   text-decoration: underline;
 }
+
+.myprojects .skill-tag {
+  display: inline-block;
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+  padding: 2px 4px;
+  margin: 2px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
 
 /* Modal ======================================*/
 .modal {
@@ -644,8 +667,13 @@ main {
   font-size: 22px;
 }
 
+.modal-content #modalTitle {
+  color: #fff;
+}
+
 .modal-content p {
   font-size: 14px;
+  color: #fff;
 }
 
 .modal .close {

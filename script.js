@@ -1,4 +1,4 @@
-import {projectsData, skills} from './data.js';
+import { projectsData, skills } from './data.js';
 
 
 const body = document.body
@@ -70,10 +70,10 @@ document.addEventListener('scroll', scrollUp)
 const skillsList = document.getElementById("skillsList");
 
 skills.forEach(skill => {
-  const li = document.createElement("li");
-  li.className = "skills__list-item";
-  li.innerHTML = `<i class="${skill.icon}"></i> ${skill.name}`;
-  skillsList.appendChild(li);
+	const li = document.createElement("li");
+	li.className = "skills__list-item";
+	li.innerHTML = `<i class="${skill.icon}"></i> ${skill.name}`;
+	skillsList.appendChild(li);
 });
 
 
@@ -98,19 +98,23 @@ function showProjects(batch) {
       <div class="project-content">
         <h3 class="project-title">${project.title}</h3>
         <p class="project-description">${project.description}</p>
-        <div class="project_show">
-          <button class=" link view-btn" data-title="${project.title}" data-description="${project.description}" data-image="${project.image}">View</button>
-          <a href="${project.link}" target="_blank" class=" link">Visit Site</a>
-        </div>
+		<div class="project-skills">
+			${project.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join("")}
+		</div>
+		<div class="project_show">
+			<button class="link view-btn" data-title="${project.title}" data-description="${project.description}" data-image="${project.image}">View</button>
+			<a href="${project.link}" target="_blank" class="link">Visit Site</a>
+		</div>
       </div>
     `;
 		container.appendChild(card);
 	});
 	currentIndex += batch;
 	if (currentIndex >= projectsData.length) {
-		viewMoreBtn.style.display = "none"; // Hide button when done
+		viewMoreBtn.style.display = "none";
 	}
 }
+
 
 // Initial load
 showProjects(batchSize);
