@@ -1,7 +1,4 @@
-# vikaskr-gupta.portfolio.io
-
-
-# 👋 Hi, I'm Vikas Kumar Gupta
+# 👋 Hi, I'm Vikas Gupta
 
 🚀 Frontend Developer | React & Next.js Specialist  
 📍 Dwarka, Delhi  
@@ -163,8 +160,8 @@ Snatkottar Mahavidhalaya
 
 ⭐ If you like my work, feel free to explore my repositories and give them a star!
 
-- **LinkedIn:** https://linkedin.com/in/yourprofile
-- **Email:** your.email@example.com
+- **LinkedIn:** https://www.linkedin.com/in/vikaskr-gupta
+- **Email:** vvikaskgupta86@gmail.com
 
 ---
 
